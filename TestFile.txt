@@ -1,4 +1,4 @@
-﻿Mark Molabola
-81
-123 W Main St Dummy City, CA 12345
-(123) 456-7890
+Name: bluefang
+Age: 34
+Address: we2323 23242 grgr
+Number: 123 456 789

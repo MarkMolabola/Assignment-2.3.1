@@ -6,15 +6,41 @@
         {
             //. Write a console application to create a text file and save your basic details like name, age, address ( use dummy data).
             //Read the details from same file and print on console.
-            
-            string name = "";
-            string age = "";
-            string address = "";
-            string phoneNumber = "";
+            Console.Write("Enter your Name:");
+            string name = Console.ReadLine();
+            Console.Write("Enter your Age:");
+            string age = Console.ReadLine();
+            Console.Write("Enter your Address:");
+            string address = Console.ReadLine();
+            Console.Write("Enter your Phone Number:");
+            string phoneNumber = Console.ReadLine();
 
             try
             {
-                string filePath = "C:\\Users\\markg\\source\\repos\\Assignment 2.3.1\\TestFile.txt";
+                string docPath = @"C:\Users\markg\source\repos\Assignment 2.3.1";
+                string filePath = Path.Combine(docPath, "TestFile.txt");
+                Directory.CreateDirectory(docPath);
+                using (StreamWriter sw = new StreamWriter(filePath))
+                {
+                    sw.WriteLine("Name: " + name);
+                    sw.WriteLine("Age: " + age);
+                    sw.WriteLine("Address: " + address);
+                    sw.WriteLine("Number: " + phoneNumber);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be written");
+                Console.WriteLine("Error: " + e.Message);
+            }
+
+            try
+            {
+                
+                string docPath = @"C:\Users\markg\source\repos\Assignment 2.3.1";
+                string filePath = Path.Combine(docPath, "TestFile.txt");
+
+                
                 using (StreamReader sr = new StreamReader(filePath))
                 {
                     string line;
